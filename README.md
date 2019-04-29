@@ -4,7 +4,6 @@ Work done from the Odin Project - Rails will be found in this repository.
   - Setting up environment
 
 Currently working on:
-- Ruby --> Intermediate Ruby
 - Ruby on Rails
 
 Upcoming:
