@@ -1,10 +1,9 @@
 # TheOdinProject-Rails
-Work done from the Odin Project - Rails will be found in this repository.
+Work done from The Odin Project - Rails will be found in this repository.
 - Created on: March 10th 2019.
   - Setting up environment
 
 Currently working on:
-- Ruby --> Intermediate Ruby
 - Ruby on Rails
 
 Upcoming:
