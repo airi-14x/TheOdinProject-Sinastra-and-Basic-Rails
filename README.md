@@ -1,12 +1,8 @@
 # TheOdinProject-Rails
-Work done from The Odin Project - Rails will be found in this repository.
-- Created on: March 10th 2019.
-  - Setting up environment
+Creation: March 10th 2019
 
-Currently working on:
-- Ruby on Rails
+- Setting up environment
+- Jumpstart Lab Curriculum:
+  - Completed I0(04/28), I1(05/01)
 
-Upcoming:
-- HTML + CSS --> Design & UX
-
-*Updated: March 10th 2019*
+*Updated: May 1st 2019*
