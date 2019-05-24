@@ -9,7 +9,7 @@ get '/' do
   guess = params["guess"]
   message = ''
   message = check_guess(guess)
-  erb :index, locals: { message: message}
+  erb :index, locals: {message: message}
 end
 
 def check_guess(guess)
