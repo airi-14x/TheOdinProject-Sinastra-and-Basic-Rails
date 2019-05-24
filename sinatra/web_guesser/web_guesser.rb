@@ -3,28 +3,36 @@
 require 'sinatra'
 require 'sinatra/reloader'
 
+$SECRET_NUMBER = rand(100)
+
 get '/' do
-  current_number = Random.new(123).rand(100)
-  guess = params['guess']
+  guess = params["guess"]
   message = ''
-  unless params['guess'].nil?
-    if Integer(guess) > current_number
-      message = if Integer(guess) > current_number + 5
+  message = check_guess(guess)
+  erb :index, locals: { message: message}
+end
+
+def check_guess(guess)
+  unless guess.nil? || guess.empty?
+    if Integer(guess) > $SECRET_NUMBER
+      message = if Integer(guess) > $SECRET_NUMBER + 5
                   'Way Too High!'
                 else
                   'Too High!'
                 end
     end
-    if Integer(guess) < current_number
-      message = if Integer(guess) < current_number - 5
+    if Integer(guess) < $SECRET_NUMBER
+      message = if Integer(guess) < $SECRET_NUMBER - 5
                   'Way Too Low!'
                 else
                   'Too Low!'
                 end
     end
-    if Integer(guess) == current_number
+    if Integer(guess) == $SECRET_NUMBER
       message = 'Perfect! Congrats, your guess was correct!'
+      message += " Secret Number was #{$SECRET_NUMBER}!"
     end
-    erb :index, locals: { current_number: current_number, message: message }
-end
+    message
+  end
+
 end
