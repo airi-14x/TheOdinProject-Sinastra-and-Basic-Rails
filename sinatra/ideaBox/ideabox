@@ -1,16 +1,19 @@
 ---
 ideas:
-- :title: diet
-  :description: pizza all the time
-- :title: exercise
-  :description: play video games
-- :title: diet
-  :description: pizza all the time
-- :title: app
-  :description: social network for dogs
-- :title: excursion
-  :description: take everyone to the zoo
-- :title: party
-  :description: dance all night and all day
-- :title: Testing
-  :description: Hello World!
+- !ruby/hash:Sinatra::IndifferentHash
+  title: exercise
+  description: play video games 2
+- !ruby/hash:Sinatra::IndifferentHash
+  title: diet
+  description: pizza all the time
+- !ruby/hash:Sinatra::IndifferentHash
+  title: app
+  description: social network for dogs
+- !ruby/hash:Sinatra::IndifferentHash
+  title: excursion
+  description: take everyone to the zoo
+- !ruby/hash:Sinatra::IndifferentHash
+  title: party
+  description: dance all night and all day
+- title: Testing
+  description: Hello World! 1
