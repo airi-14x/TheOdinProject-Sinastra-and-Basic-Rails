@@ -1,12 +1,15 @@
 # frozen_string_literal: true
 
 require 'bundler'
-require './idea'
-require './idea_store'
+#require './idea'
+#require './idea_store'
+#require 'app'
+require 'idea_box'
 Bundler.require
 
 class IdeaBoxApp < Sinatra::Base
   set :method_override, true
+  set :root, 'lib/app'
   not_found do
     erb :error
   end
