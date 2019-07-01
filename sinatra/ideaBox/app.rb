@@ -2,6 +2,7 @@
 
 require 'bundler'
 require './idea'
+require './idea_store'
 Bundler.require
 
 class IdeaBoxApp < Sinatra::Base
@@ -11,39 +12,28 @@ class IdeaBoxApp < Sinatra::Base
   end
 
   get '/' do
-    erb :index, locals: { ideas: Idea.all }
+    erb :index, locals: {ideas: IdeaStore.all, idea: Idea.new(params)}
   end
 
   post '/' do
-    # params.inspect
-    # 1. Create an idea based on the form parameters
-    # idea = Idea.new(params['idea_title'], params['idea_description'])
-    # idea = Idea.new(title: params['idea_title'], description: params['idea_description'])
-    idea = Idea.new(params[:idea])
-    # 2. Store it
-    idea.save
-    # 3. Send us back to the index page to see all ideas
+    IdeaStore.create(params[:idea])
+    redirect '/'
+  end
+
+  delete '/:id' do |id|
+    IdeaStore.delete(id.to_i)
+    redirect '/'
+  end
+
+  put '/:id' do |id|
+    IdeaStore.update(id.to_i, params[:idea])
     redirect '/'
   end
 
   get '/:id/edit' do |id|
-    idea = Idea.find(id.to_i)
+    idea = IdeaStore.find(id.to_i)
     erb :edit, locals: { id: id, idea: idea }
   end
 
-  put '/:id' do |id|
-    # "Tweaking the IDEA!"
-    #data = {
-    #  title: params['idea_title'],
-    #  description: params['idea_description']
-    #}
-    #Idea.update(id.to_i, data)
-    Idea.update(id.to_i, params[:idea])
-    redirect '/'
-  end
-  delete '/:id' do |id|
-    Idea.delete(id.to_i)
-    redirect '/'
-  end
-  # run! if app_file == $0
+
 end
