@@ -1,8 +1,8 @@
 ---
 ideas:
-- !ruby/hash:Sinatra::IndifferentHash
-  title: exercise
+- title: exercise
   description: play video games
+  rank: 1
 - !ruby/hash:Sinatra::IndifferentHash
   title: diet
   description: pizza all the time
@@ -12,9 +12,9 @@ ideas:
 - !ruby/hash:Sinatra::IndifferentHash
   title: excursion
   description: take everyone to the zoo
-- !ruby/hash:Sinatra::IndifferentHash
-  title: party
+- title: party
   description: dance all night and all day
+  rank: 3
 - !ruby/hash:Sinatra::IndifferentHash
   title: Testing
   description: Hello World!
