@@ -2,8 +2,9 @@
 Creation: March 10th 2019
 
 - Setting up environment
-- Jumpstart Lab Curriculum(Rails)
+- WebGuesser(Sinastra)
   - Completed 05/14
+- Ideabox(Sinastra)
+  - Completed 07/02
 
-
-*Updated: May 19th 2019*
+*Updated: July 2th 2019*
