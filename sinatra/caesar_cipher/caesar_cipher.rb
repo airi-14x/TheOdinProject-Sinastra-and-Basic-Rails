@@ -15,8 +15,6 @@ class CaesarCipher
 
   def ciphering(str, shift_index)
     str = str.split(' ')
-    puts str
-
     (0...str.length).each do |word_index|
       # Shifting letter index
       (0...str[word_index].length).each do |letter_index|
@@ -24,10 +22,7 @@ class CaesarCipher
         # Shift then .chr to convert back
         # puts str[word_index][letter_index]
         @current_letter = str[word_index][letter_index].ord
-        puts @current_letter
         if @current_letter >= UPPER_CASE_ASCII_MIN && @current_letter <= UPPER_CASE_ASCII_MAX
-          puts 'Here1'
-          puts @current_letter
           if (@current_letter + shift_index) / UPPER_CASE_ASCII_MAX >= 1
             # Wrapping around
             @current_letter = (@current_letter + shift_index) % UPPER_CASE_ASCII_MAX + UPPER_CASE_ASCII_MIN - 1
@@ -35,8 +30,6 @@ class CaesarCipher
             @current_letter = (@current_letter + shift_index) % UPPER_CASE_ASCII_MAX
           end
         elsif @current_letter >= LOWER_CASE_ASCII_MIN && @current_letter <= LOWER_CASE_ASCII_MAX
-          puts 'Here2'
-          puts @current_letter
           if (@current_letter + shift_index) / LOWER_CASE_ASCII_MAX >= 1
             # Wrapping around
             @current_letter = (@current_letter + shift_index) % LOWER_CASE_ASCII_MAX + LOWER_CASE_ASCII_MAX
