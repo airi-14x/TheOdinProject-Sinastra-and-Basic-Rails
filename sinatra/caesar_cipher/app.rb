@@ -2,9 +2,9 @@ require './caesar_cipher'
 
 class CaesarCipherApp < Sinatra::Base
 
-  configure :development do
-    register Sinatra::Reloader
-  end
+  #configure :development do
+  #  register Sinatra::Reloader
+  #end
 
   not_found do
     erb :error
