@@ -7,4 +7,5 @@
 
 ##### Running Rails Server
 `rackup -p 9000`
+
 `shotgun --port=6000 config.ru`
