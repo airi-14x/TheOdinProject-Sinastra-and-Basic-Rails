@@ -15,6 +15,7 @@ class CaesarCipher
 
   def ciphering(str, shift_index)
     str = str.split(' ')
+    # shift_index.is_a? String
     (0...str.length).each do |word_index|
       # Shifting letter index
       (0...str[word_index].length).each do |letter_index|
@@ -23,26 +24,26 @@ class CaesarCipher
         # puts str[word_index][letter_index]
         @current_letter = str[word_index][letter_index].ord
         if @current_letter >= UPPER_CASE_ASCII_MIN && @current_letter <= UPPER_CASE_ASCII_MAX
-          if (@current_letter + shift_index) / UPPER_CASE_ASCII_MAX >= 1
+          if (@current_letter + shift_index.to_i) / UPPER_CASE_ASCII_MAX >= 1
             # Wrapping around
-            @current_letter = (@current_letter + shift_index) % UPPER_CASE_ASCII_MAX + UPPER_CASE_ASCII_MIN - 1
+            @current_letter = (@current_letter + shift_index.to_i) % UPPER_CASE_ASCII_MAX + UPPER_CASE_ASCII_MIN - 1
           else
-            @current_letter = (@current_letter + shift_index) % UPPER_CASE_ASCII_MAX
+            @current_letter = (@current_letter + shift_index.to_i) % UPPER_CASE_ASCII_MAX
           end
         elsif @current_letter >= LOWER_CASE_ASCII_MIN && @current_letter <= LOWER_CASE_ASCII_MAX
-          if (@current_letter + shift_index) / LOWER_CASE_ASCII_MAX >= 1
+          if (@current_letter + shift_index.to_i) / LOWER_CASE_ASCII_MAX >= 1
             # Wrapping around
-            @current_letter = (@current_letter + shift_index) % LOWER_CASE_ASCII_MAX + LOWER_CASE_ASCII_MAX
+            @current_letter = (@current_letter + shift_index.to_i) % LOWER_CASE_ASCII_MAX + LOWER_CASE_ASCII_MAX
           else
-            @current_letter = (@current_letter + shift_index) % LOWER_CASE_ASCII_MAX
+            @current_letter = (@current_letter + shift_index.to_i) % LOWER_CASE_ASCII_MAX
           end
         end
         @@ciphered_str += @current_letter.chr
       end
       @@ciphered_str << ' ' if word_index < str.length
     end
-    puts @@ciphered_str
-    clear
+    @@ciphered_str
+    #clear
   end
 
   def clear
@@ -50,5 +51,5 @@ class CaesarCipher
   end
 end
 
-test1 = CaesarCipher.new
-test1.ciphering('What a string!', 5)
+# test1 = CaesarCipher.new
+# test1.ciphering('What a string!', 5)
