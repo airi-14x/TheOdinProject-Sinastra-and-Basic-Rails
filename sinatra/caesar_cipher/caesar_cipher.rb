@@ -3,7 +3,6 @@
 class CaesarCipher
   # Upper case - ASCII: 65 -> 90
   # Lower case - ASCII: 97 -> 122
-  # @ciphered_str = ""
   UPPER_CASE_ASCII_MIN = 65
   UPPER_CASE_ASCII_MAX = 90
   LOWER_CASE_ASCII_MIN = 97
@@ -43,13 +42,5 @@ class CaesarCipher
       @@ciphered_str << ' ' if word_index < str.length
     end
     @@ciphered_str
-    #clear
-  end
-
-  def clear
-    @@ciphered_str = ''
   end
 end
-
-# test1 = CaesarCipher.new
-# test1.ciphering('What a string!', 5)
