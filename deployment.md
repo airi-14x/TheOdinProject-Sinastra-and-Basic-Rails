@@ -5,9 +5,15 @@
 4. heroku create
 5. heroku buildpacks:set https://github.com/bundler/heroku-buildpack-bundler2
 6. git push heroku master
-7. heroku run rails db:migrate 
+7. heroku run rails db:migrate
 
 `git config --list`
+
+##### Essential Heroku Commands
+`heroku run rails db:migrate`
+`heroku run console`
+`heroku logs -t`
+`heroku restart` 
 
 ##### Running Rails Server
 `rackup -p 9000`
