@@ -1,4 +1,4 @@
-# TheOdinProject-Sinastra-and-Basic-Rails
+# TheOdinProject-Sinatra-and-Basic-Rails
 Creation: March 10th 2019
 
 | Tasks | Completion Date | 
